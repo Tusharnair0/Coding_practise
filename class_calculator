@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+
+//calculating operation.
+
+int add(int a,int b);
+int sub(int a,int b);
+int mul(int a,int b);
+float div(float a,float b);
+
+// parent class 
+class calculator{
+	private:
+		float num1,num2;
+		char optr;
+	public:
+		void get();
+		void calculate();	
+};
+
+void calculator::get(){
+	cout << "input way - Example :- # a + b " <<endl;
+	cout << "\n|" ;
+	cin >> num1 >> optr >> num2; // input ex- 2 + 3
+}
+
+void calculator::calculate(){
+	switch(optr){
+		case '+':
+			cout << num1 << " + " << num2 <<" = " << add(num1,num2)<<endl;
+			break;
+		case '-':
+			cout << num1 << " - " << num2 <<" = " << sub(num1,num2)<<endl;
+			break;
+		case '*':
+			cout << num1 << " * " << num2 <<" = " << mul(num1,num2)<<endl;
+			break;		
+		case '/':
+			cout << num1 << " / " << num2 <<" = " << div(num1,num2)<<endl;
+			break;	
+	}
+}
+
+// calculating defination 
+
+int add(int a,int b){
+	return a+b;
+}
+int sub(int a,int b){
+	return a-b;
+}
+int mul(int a,int b){
+	return a*b;
+}
+float div(float a,float b){
+	return a/b;
+}
+
+// Main
+
+int main(){
+	bool flag = true;
+	int replay;
+	calculator obj;
+	while(flag == true){
+		obj.get();
+		obj.calculate();
+		cout << "\n\nreplay yes for 1/no for 2 = ";
+		cin >> replay;
+		if(replay == 2){
+			flag = false;
+		}
+	}	
+	return 0;
+}
