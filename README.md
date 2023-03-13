@@ -1,5 +1,4 @@
-# Coding_practise
-My coding practise
+# Calculator by OOPs concept
 
 In this program the concept of classes as well switch cases are used.
  ### Class:- 
